@@ -87,35 +87,36 @@
             font-size: 24px;
             color: #3498db;
         }
-        .copy-icon {
-            cursor: pointer;
-            color: #3498db;
-            margin-left: 10px;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
-        .copy-icon:hover {
-            color: #2980b9;
-        }
         footer {
             text-align: center;
             padding: 20px 0;
             background-color: #2c3e50;
             color: white;
         }
-    </style>
-    <script>
-        function copyToClipboard(id) {
-            var textToCopy = document.getElementById(id).innerText;
-            var tempInput = document.createElement("input");
-            tempInput.value = textToCopy;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            alert("Copied: " + textToCopy);
+        @media (max-width: 600px) {
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-btn {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .contact-info p {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-info a {
+                display: inline-block;
+                margin-top: 5px;
+                word-break: break-word;
+            }
         }
-    </script>
+    </style>
 </head>
 <body>
     <header>
@@ -136,7 +137,10 @@
                 <a href="https://www.facebook.com/YarinWaizman/" target="_blank" class="social-btn facebook-btn">
                     <i class="fab fa-facebook-f"></i> Facebook
                 </a>
-                <a href="https://www.linkedin.com/in/yarinwaizman/" target="_blank" class="social-btn linkedin-btn">
+                <a href="https://instagram.com/yarinwaizman" target="_blank" class="social-btn" style="background-color: #E4405F;">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://www.linkedin.com/in/yarin-waizman-4313b0288" target="_blank" class="social-btn linkedin-btn">
                     <i class="fab fa-linkedin-in"></i> LinkedIn
                 </a>
                 <a href="https://wa.me/972543185356" target="_blank" class="social-btn whatsapp-btn">
@@ -148,15 +152,9 @@
         <section>
             <h2>Contact Information</h2>
             <div class="contact-info">
-                <p id="phone"><i class="fas fa-phone-alt"></i> +972 54 3185356
-                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('phone')" title="Copy phone number"></i>
-                </p>
-                <p id="personal-email"><i class="fas fa-envelope"></i> yarinwaizman1996@gmail.com
-                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('personal-email')" title="Copy personal email"></i>
-                </p>
-                <p id="work-email"><i class="fas fa-briefcase"></i> yarinw@electra.co.il
-                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('work-email')" title="Copy work email"></i>
-                </p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+972543185356" style="color: white;">+972 54 3185356</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:yarinwaizman1996@gmail.com" style="color: white;">yarinwaizman1996@gmail.com</a></p>
+                <p><i class="fas fa-briefcase"></i> <a href="mailto:yarinw@electra.co.il" style="color: white;">yarinw@electra.co.il</a></p>
             </div>
         </section>
     </div>
