@@ -3,166 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yarin Waizman's Contact</title>
-    <!-- Link to Font Awesome CSS for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Yarin Waizman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.6;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        section {
-            background-color: white;
-            margin: 20px 0;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .social-btn {
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            border-radius: 30px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .facebook-btn {
-            background-color: #4267B2;
-        }
-        .whatsapp-btn {
-            background-color: #25D366;
-        }
-        .linkedin-btn {
-            background-color: #0077B5;
-        }
-        .social-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .contact-info {
-            background-color: #34495e;
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
-        }
-        .contact-info p {
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0ede6;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            justify-content: center;
+            padding: 24px;
         }
-        .contact-info i {
-            margin-right: 15px;
+
+        .card {
+            background: #faf9f6;
+            border-radius: 20px;
+            border: 1px solid #e2ddd5;
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: #f2ede5;
+            padding: 36px 28px 28px;
+            text-align: center;
+            border-bottom: 1px solid #e2ddd5;
+        }
+
+        .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #e4ddd0;
+            margin: 0 auto 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 24px;
-            color: #3498db;
+            font-weight: 600;
+            color: #6b5e4e;
+            letter-spacing: 1px;
         }
+
+        .card-header h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2a2018;
+            margin-bottom: 4px;
+        }
+
+        .card-header p {
+            font-size: 13px;
+            color: #9a8a75;
+        }
+
+        .card-body {
+            padding: 24px 24px 28px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #b0a090;
+            margin-bottom: 12px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .social-btn {
+            background: #ffffff;
+            border: 1px solid #e0dbd2;
+            border-radius: 12px;
+            padding: 14px 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #4a3f32;
+            font-size: 12px;
+            font-weight: 500;
+            transition: background 0.15s, border-color 0.15s, transform 0.15s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .social-btn i {
+            font-size: 20px;
+        }
+
+        .social-btn:hover {
+            background: #f5f1eb;
+            border-color: #c8bfb2;
+            transform: translateY(-1px);
+        }
+
+        .fa-whatsapp { color: #25D366; }
+        .fa-instagram { color: #E4405F; }
+        .fa-linkedin-in { color: #0077B5; }
+        .fa-facebook-f { color: #4267B2; }
+
+        .divider {
+            height: 1px;
+            background: #e8e3db;
+            margin-bottom: 20px;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            border: 1px solid #e0dbd2;
+            border-radius: 10px;
+            padding: 12px 14px;
+            text-decoration: none;
+            color: #4a3f32;
+            font-size: 13px;
+            transition: background 0.15s, border-color 0.15s;
+        }
+
+        .contact-row:hover {
+            background: #f5f1eb;
+            border-color: #c8bfb2;
+        }
+
+        .contact-row i {
+            font-size: 15px;
+            color: #a0907c;
+            width: 18px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .contact-row span {
+            color: #7a6a58;
+            font-size: 11px;
+            display: block;
+        }
+
         footer {
             text-align: center;
-            padding: 20px 0;
-            background-color: #2c3e50;
-            color: white;
+            padding: 16px;
+            font-size: 11px;
+            color: #c0b09a;
+            border-top: 1px solid #e2ddd5;
         }
-        @media (max-width: 600px) {
-            .social-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
 
-            .social-btn {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
-            }
-
-            .contact-info p {
-                flex-direction: column;
+        @media (max-width: 460px) {
+            body {
+                padding: 16px;
                 align-items: flex-start;
             }
-
-            .contact-info a {
-                display: inline-block;
-                margin-top: 5px;
-                word-break: break-word;
+            .card {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="avatar">YW</div>
             <h1>Yarin Waizman</h1>
+            <p>Feel free to reach out anytime</p>
         </div>
-    </header>
 
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>Hello! Welcome to my contact page, Feel free to reach out through any of the following channels.</p>
-        </section>
-
-        <section>
-            <h2>Connect With Me</h2>
-            <div class="social-buttons">
-                <a href="https://www.facebook.com/YarinWaizman/" target="_blank" class="social-btn facebook-btn">
-                    <i class="fab fa-facebook-f"></i> Facebook
+        <div class="card-body">
+            <p class="section-label">Connect</p>
+            <div class="social-grid">
+                <a href="https://wa.me/972543185356" target="_blank" class="social-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
                 </a>
-                <a href="https://instagram.com/yarinwaizman" target="_blank" class="social-btn" style="background-color: #E4405F;">
-                    <i class="fab fa-instagram"></i> Instagram
+                <a href="https://instagram.com/yarinwaizman" target="_blank" class="social-btn">
+                    <i class="fab fa-instagram"></i>
+                    Instagram
                 </a>
-                <a href="https://www.linkedin.com/in/yarin-waizman-4313b0288" target="_blank" class="social-btn linkedin-btn">
-                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                <a href="https://www.linkedin.com/in/yarin-waizman-4313b0288" target="_blank" class="social-btn">
+                    <i class="fab fa-linkedin-in"></i>
+                    LinkedIn
                 </a>
-                <a href="https://wa.me/972543185356" target="_blank" class="social-btn whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                <a href="https://www.facebook.com/YarinWaizman/" target="_blank" class="social-btn">
+                    <i class="fab fa-facebook-f"></i>
+                    Facebook
                 </a>
             </div>
-        </section>
 
-        <section>
-            <h2>Contact Information</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:+972543185356" style="color: white;">+972 54 3185356</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:yarinwaizman1996@gmail.com" style="color: white;">yarinwaizman1996@gmail.com</a></p>
-                <p><i class="fas fa-briefcase"></i> <a href="mailto:yarinw@electra.co.il" style="color: white;">yarinw@electra.co.il</a></p>
+            <div class="divider"></div>
+
+            <p class="section-label">Contact</p>
+            <div class="contact-list">
+                <a href="tel:+972543185356" class="contact-row">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        +972 54 318 5356
+                        <span>Phone</span>
+                    </div>
+                </a>
+                <a href="mailto:yarinwaizman1996@gmail.com" class="contact-row">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        yarinwaizman1996@gmail.com
+                        <span>Personal email</span>
+                    </div>
+                </a>
+                <a href="mailto:yarinw@electra.co.il" class="contact-row">
+                    <i class="fas fa-briefcase"></i>
+                    <div>
+                        yarinw@electra.co.il
+                        <span>Work email</span>
+                    </div>
+                </a>
             </div>
-        </section>
+        </div>
+
+        <footer>© 2024 Yarin Waizman</footer>
     </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Yarin Waizman. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>
